@@ -1,1 +1,1 @@
-foo x (bar x y) = (bar2 y z)
+cf x = (cf x)

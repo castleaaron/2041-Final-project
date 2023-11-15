@@ -1,4 +1,16 @@
-type token = RPAREN | LPAREN | IDENT of string | EOF | COLON
+type token =
+    VAR
+  | SEMI
+  | RPAREN
+  | RCUR
+  | LPAREN
+  | LCUR
+  | IF
+  | IDENT of string
+  | EOF
+  | ELSE
+  | COLON
+  | ASSIGN
 val menhir_begin_marker : int
 val xv_main : Ast.expression list
 val xv_expression : Ast.expression
