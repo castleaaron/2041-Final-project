@@ -7,15 +7,22 @@ module MenhirBasics = struct
     Error
   
   type token = 
+    | VAR
+    | SEMI
     | RPAREN
+    | RCUR
     | LPAREN
+    | LCUR
+    | IF
     | IDENT of (
 # 4 "lib/parser.mly"
        (string)
-# 16 "lib/parser.ml"
+# 21 "lib/parser.ml"
   )
     | EOF
+    | ELSE
     | COLON
+    | ASSIGN
   
 end
 
@@ -37,7 +44,7 @@ and _menhir_state =
   
   open Ast
 
-# 41 "lib/parser.ml"
+# 48 "lib/parser.ml"
 
 let rec _menhir_run5 : _menhir_env -> 'ttv_tail * _menhir_state * (Ast.expression) -> 'ttv_return =
   fun _menhir_env _menhir_stack ->
@@ -56,7 +63,7 @@ let rec _menhir_run5 : _menhir_env -> 'ttv_tail * _menhir_state * (Ast.expressio
 and _menhir_run8 : _menhir_env -> 'ttv_tail * _menhir_state * (Ast.expression) -> (
 # 4 "lib/parser.mly"
        (string)
-# 60 "lib/parser.ml"
+# 67 "lib/parser.ml"
 ) -> 'ttv_return =
   fun _menhir_env _menhir_stack _v ->
     let _menhir_env = _menhir_discard _menhir_env in
@@ -64,13 +71,13 @@ and _menhir_run8 : _menhir_env -> 'ttv_tail * _menhir_state * (Ast.expression) -
     let (nm : (
 # 4 "lib/parser.mly"
        (string)
-# 68 "lib/parser.ml"
+# 75 "lib/parser.ml"
     )) = _v in
     let (_menhir_stack, _menhir_s, (e1 : (Ast.expression))) = _menhir_stack in
     let _v : (Ast.expression) = 
-# 18 "lib/parser.mly"
+# 34 "lib/parser.mly"
         (Application (e1, Identifier nm))
-# 74 "lib/parser.ml"
+# 81 "lib/parser.ml"
      in
     _menhir_goto_expression _menhir_env _menhir_stack _menhir_s _v
 
@@ -93,9 +100,9 @@ and _menhir_goto_expression : _menhir_env -> 'ttv_tail -> _menhir_state -> (Ast.
             let _menhir_stack = Obj.magic _menhir_stack in
             let ((_menhir_stack, _menhir_s), _, (e : (Ast.expression))) = _menhir_stack in
             let _v : (Ast.expression) = 
-# 15 "lib/parser.mly"
+# 31 "lib/parser.mly"
                                        ( e )
-# 99 "lib/parser.ml"
+# 106 "lib/parser.ml"
              in
             _menhir_goto_expression _menhir_env _menhir_stack _menhir_s _v
         | _ ->
@@ -119,9 +126,9 @@ and _menhir_goto_expression : _menhir_env -> 'ttv_tail -> _menhir_state -> (Ast.
             let _menhir_stack = Obj.magic _menhir_stack in
             let ((_menhir_stack, _menhir_s, (e1 : (Ast.expression))), _, (e2 : (Ast.expression))) = _menhir_stack in
             let _v : (Ast.expression) = 
-# 20 "lib/parser.mly"
+# 36 "lib/parser.mly"
         (Application (e1, e2))
-# 125 "lib/parser.ml"
+# 132 "lib/parser.ml"
              in
             _menhir_goto_expression _menhir_env _menhir_stack _menhir_s _v
         | _ ->
@@ -140,9 +147,9 @@ and _menhir_goto_expression : _menhir_env -> 'ttv_tail -> _menhir_state -> (Ast.
             let _menhir_stack = Obj.magic _menhir_stack in
             let (_menhir_stack, _menhir_s, (e : (Ast.expression))) = _menhir_stack in
             let _v : (Ast.expression list) = 
-# 13 "lib/parser.mly"
+# 24 "lib/parser.mly"
                          ( [e] )
-# 146 "lib/parser.ml"
+# 153 "lib/parser.ml"
              in
             let _menhir_stack = Obj.magic _menhir_stack in
             let _menhir_stack = Obj.magic _menhir_stack in
@@ -192,7 +199,7 @@ and _menhir_run1 : _menhir_env -> 'ttv_tail -> _menhir_state -> 'ttv_return =
 and _menhir_run2 : _menhir_env -> 'ttv_tail -> _menhir_state -> (
 # 4 "lib/parser.mly"
        (string)
-# 196 "lib/parser.ml"
+# 203 "lib/parser.ml"
 ) -> 'ttv_return =
   fun _menhir_env _menhir_stack _menhir_s _v ->
     let _menhir_env = _menhir_discard _menhir_env in
@@ -200,12 +207,12 @@ and _menhir_run2 : _menhir_env -> 'ttv_tail -> _menhir_state -> (
     let (nm : (
 # 4 "lib/parser.mly"
        (string)
-# 204 "lib/parser.ml"
+# 211 "lib/parser.ml"
     )) = _v in
     let _v : (Ast.expression) = 
-# 16 "lib/parser.mly"
+# 32 "lib/parser.mly"
                  ( Identifier nm )
-# 209 "lib/parser.ml"
+# 216 "lib/parser.ml"
      in
     _menhir_goto_expression _menhir_env _menhir_stack _menhir_s _v
 
@@ -245,4 +252,4 @@ and main : (Lexing.lexbuf -> token) -> Lexing.lexbuf -> (Ast.expression list) =
 # 269 "<standard.mly>"
   
 
-# 249 "lib/parser.ml"
+# 256 "lib/parser.ml"

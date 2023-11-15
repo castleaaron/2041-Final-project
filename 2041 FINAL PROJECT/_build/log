@@ -1,10 +1,11 @@
 # dune build
 # OCAMLPARAM: unset
-# Workspace root: "/home/castl145/Desktop/2041 FINAL PROJECT"
-$ /usr/bin/nproc > /tmp/duneeef1f1.output 2> /dev/null
+# Workspace root: "/home/speng026/Downloads/2041-Final-project-main/2041 FINAL
+# PROJECT"
+$ /usr/bin/nproc > /tmp/dune0b038b.output 2> /dev/null
 # Auto-detected concurrency: 16
 # disable binary cache
-$ /usr/bin/ocamlc.opt -config > /tmp/dune11ce83.output
+$ /usr/bin/ocamlc.opt -config > /tmp/dune913610.output
 # Dune context:
 #  { name = "default"
 #  ; kind = "default"
@@ -23,18 +24,19 @@ $ /usr/bin/ocamlc.opt -config > /tmp/dune11ce83.output
 #  ; env =
 #      map
 #        { "CAML_LD_LIBRARY_PATH" :
-#            "/home/castl145/Desktop/2041 FINAL PROJECT/_build/install/default/lib/stublibs"
+#            "/home/speng026/Downloads/2041-Final-project-main/2041 FINAL PROJECT/_build/install/default/lib/stublibs"
 #        ; "DUNE_OCAML_HARDCODED" : "/usr/lib/ocaml"
 #        ; "DUNE_OCAML_STDLIB" : "/usr/lib/ocaml"
-#        ; "DUNE_SOURCEROOT" : "/home/castl145/Desktop/2041 FINAL PROJECT"
+#        ; "DUNE_SOURCEROOT" :
+#            "/home/speng026/Downloads/2041-Final-project-main/2041 FINAL PROJECT"
 #        ; "INSIDE_DUNE" :
-#            "/home/castl145/Desktop/2041 FINAL PROJECT/_build/default"
+#            "/home/speng026/Downloads/2041-Final-project-main/2041 FINAL PROJECT/_build/default"
 #        ; "OCAMLFIND_IGNORE_DUPS_IN" :
-#            "/home/castl145/Desktop/2041 FINAL PROJECT/_build/install/default/lib"
+#            "/home/speng026/Downloads/2041-Final-project-main/2041 FINAL PROJECT/_build/install/default/lib"
 #        ; "OCAMLPATH" :
-#            "/home/castl145/Desktop/2041 FINAL PROJECT/_build/install/default/lib"
+#            "/home/speng026/Downloads/2041-Final-project-main/2041 FINAL PROJECT/_build/install/default/lib"
 #        ; "OCAMLTOP_INCLUDE_PATH" :
-#            "/home/castl145/Desktop/2041 FINAL PROJECT/_build/install/default/lib/toplevel"
+#            "/home/speng026/Downloads/2041-Final-project-main/2041 FINAL PROJECT/_build/install/default/lib/toplevel"
 #        ; "OCAML_COLOR" : "always"
 #        ; "OPAMCOLOR" : "always"
 #        }
