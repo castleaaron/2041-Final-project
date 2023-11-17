@@ -3,7 +3,7 @@
    - all functions and lemmas have only a single argument
    - the only statement is a let-prove statement
    - the only hint is 'axiom' (no 'induction')
-*)
+   *)
 
 let (*prove*) cf_idempotent (h : int)
  = (cf (cf h) = cf h)
