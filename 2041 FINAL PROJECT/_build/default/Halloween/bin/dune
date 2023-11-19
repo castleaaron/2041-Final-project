@@ -1,4 +1,0 @@
-(executable
- (public_name halloween)
- (name main)
- (libraries halloween))
