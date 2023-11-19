@@ -15,6 +15,7 @@ let rec string_of_expression (e : expression)
   (string_of_expression e1) ^ " " ^ (string_of_expression_with_parens e2)
 | Punctuation pt -> pt
 | Prove pv -> pv
+| Hint ht -> ht
 
 and string_of_expression_with_parens e
 = match e with
@@ -22,5 +23,7 @@ and string_of_expression_with_parens e
 | Application _ -> "(" ^ string_of_expression e ^ ")"
 | Punctuation pt -> pt
 | Prove pv -> pv
+| Hint ht -> ht
+
 
 

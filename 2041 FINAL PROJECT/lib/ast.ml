@@ -3,4 +3,5 @@ type expression =
   | Application of expression * expression
   | Punctuation of string
   | Prove of string
+  | Hint of string
   
