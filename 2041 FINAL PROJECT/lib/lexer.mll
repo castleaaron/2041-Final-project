@@ -10,7 +10,7 @@ rule token = parse
     | "(*prove*)" + as prove {PROVE(prove)}
     | "(*hint:" + as hint {HINT(hint)}
     | "*)" + as eht {IDENT(eht)}
-    | newline as nl {IDENT(nl)}
+    | newline {Lexing.new_line lexbuf; token lexbuf}
     | ['a'-'z' 'A'-'Z' '0'-'9' '_' '\''] + as word {IDENT(word)}
     | '(' {LPAREN}
     | ')' {RPAREN}

@@ -1,1 +1,2 @@
-(* hello *)
+cf x = (cf x) and
+(cf x) = cf (((x)))
