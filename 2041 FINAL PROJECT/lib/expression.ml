@@ -10,20 +10,20 @@ let parse (s : string) : expression list =
 
 let rec string_of_expression (e : expression) 
 = match e with
-| Identifier nm -> nm
+| Identifier nm -> if nm = "let" || nm = "type" then "\n" ^ nm else nm
 | Application (e1, e2) -> 
   (string_of_expression e1) ^ " " ^ (string_of_expression_with_parens e2)
 | Punctuation pt -> pt
 | Prove pv -> pv
-| Hint ht -> ht
+| Hint ht -> "\n" ^ ht
 
 and string_of_expression_with_parens e
 = match e with
-| Identifier nm -> nm
+| Identifier nm -> if nm = "let" || nm = "type" then "\n" ^ nm else nm
 | Application _ -> "(" ^ string_of_expression e ^ ")"
 | Punctuation pt -> pt
 | Prove pv -> pv
-| Hint ht -> ht
+| Hint ht -> "\n" ^ ht
 
 
 
